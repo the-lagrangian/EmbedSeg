@@ -173,7 +173,7 @@ class ToTensorFromNumpy(object):
 
     def __init__(self, keys=[], type="float", normalization_factor=1.0):
 
-        if isinstance(type, collections.Iterable):
+        if isinstance(type, collections.abc.Iterable):
             assert (len(keys) == len(type))
 
         self.keys = keys
@@ -186,7 +186,7 @@ class ToTensorFromNumpy(object):
             # assert (k in sample)
 
             t = self.type
-            if isinstance(t, collections.Iterable):
+            if isinstance(t, collections.abc.Iterable):
                 t = t[idx]
             if (k in sample):
                 if k == 'image':  # image
