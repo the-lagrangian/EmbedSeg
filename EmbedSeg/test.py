@@ -66,7 +66,8 @@ def begin_evaluating(test_configs, optimize=False, maxiter=10, verbose=False, ma
     uniform_ds_factor = test_configs['uniform_ds_factor']
 
     # set device
-    device = torch.device("cuda:0" if test_configs['cuda'] else "cpu")
+    # device = torch.device("cuda:0" if test_configs['cuda'] else "cpu")
+    device = torch.device("mps")
 
     # dataloader
     dataset = get_dataset(test_configs['dataset']['name'], test_configs['dataset']['kwargs'])
